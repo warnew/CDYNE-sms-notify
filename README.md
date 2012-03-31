@@ -2,43 +2,31 @@
 
 ##What's this?##
  
-We [learned](link a kozossegepito cikkre) from the guys at (a site neve) there are a few key things in early community development.
+We [learned](link a kozossegepito cikkre) from the guys at (a site neve) there are a few key things in early community development. One of those is the swift - and jo minosegu if possible - answer to their forum posts. We can't exepct from the key members to be online all the time, and they can't or won't use web nor email on their phones... So we came up with the idea of a SMS autoresponder. Soon we found CDYNE's SMS Notify! API. 
 
-Mint megtanultuk a sracoktol ott..., a korai kozossegfejlesztesnek egyik fontos eleme, hogy ha valaki ir a forumon, akkor hamar kapjon - lehetoleg minosegi - valaszt. Nem varjuk el a kulcsfiguraktol, hogy folyamatosan figyeljek az oldalt, de szeretnenk ha ennek ellenere idoben ertesulnenek az oket erinto kerdesekrol. 
+##Install and usage:##
 
-Eleg hamar megfogalmazodott, hogy egy autoresponder alkalmas lehet a problema megoldasara, de sokaknak nincs okostelefonja, igy az email/mobil web ertesitok kiesnek, maradt az SMS!
+Copy the files to your webroot(s) and fill the config.php. Include trigger.php where you want to use it, then `sms_notify('phone-number','event')`.
+For more information see the code.
 
-Szerencsere a CDYNE SMS Notify! API-ja, amivel az sms-ek kuldese (es fogadasa) meglehetosen egyszeru.
+##Plans:##
 
+- Make it 'safe'. Right now anybody could use it and spam our key users... We should use some security measures to avoid this.
+- Make the texts take extra params. Something like: `'event' => 'hey, there was an event at $1'` where we can replace the $n with the nth extra param.
 
-So, we have a new project in development, where we want to cultivate a communitysome of the key figures in our young community don't have smartphones or simply they can't (or won't) do email or check our forums when they're offline.  
- 
-There is a professional and simple to use SMS Notify api at CDYNE, so that's the weapon of choice in this example. Let's see how to do something like this:  
- 
+##Copyright:##
 
+    Copyright 2012, Zoltan Lengyel.
 
-##Hogyan?##
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    any later version.
 
-Volt par szempont, mikor elkezdtem ezt a projectet megvalositani:
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-- egyedulallo
-- kis eroforras igenyu
-- egyszeruen konfiguralhato
-- biztonsagos (idegenek ne nagyon kuldjenek sms-t vele)
-
-Hat, ez lett belole.
-
-##Hasznalat:##
-
-van 3 file: 
-  a config
-    ide irjuk, a dolgokat amit a ket masik hasznal
-  a szerver
-    ez kuldi az smst
-  a 'kliens'
-    ezzel kuldjuk az smst
-
-##Jogok:##
-
-GPL
-
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
