@@ -1,7 +1,7 @@
 <?
 define('SMS_AUTORESPONDER',true);
 
-include('./sms-notify-config.php');
+include('./sms_notify_config.php');
 
 //This is how we use the CDYNE SMS Notify! API:
 function send_texts($numbers,$text) {

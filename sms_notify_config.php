@@ -1,7 +1,8 @@
 <?
-if (!defined('SMS_AUTORESPONDER') die(); // against direct access
+if (!defined('SMS_AUTORESPONDER')) die(); // against direct access
 
-$cdyne_lkey = GET_YOUR_KEY_FROM_CDYNE; 'FB11611C-B6EB-48BE-96B2-6990ECD87DD1',
+//Get your own!
+$cdyne_lkey = 'FB11611C-B6EB-48BE-96B2-6990ECD87DD1';
 
 // the events are in this array
 // 'event_name' => 'response_text'
