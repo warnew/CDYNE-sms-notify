@@ -6,7 +6,11 @@ We [learned](link a kozossegepito cikkre) from the guys at (a site neve) there a
 
 ##Install and usage:##
 
-Copy the files to your webroot(s) and fill the config.php. Include trigger.php where you want to use it, then `sms_notify('phone-number','event')`.
+1. Get your license key from CDYNE.
+2. Copy the files to your webroot(s) and fill the config.php.
+3. Include sms_notify.php where you want to use it
+4. Call the function `sms_notify('phone-number','event')` to send the texts. 
+
 For more information see the code.
 
 ##Plans:##
