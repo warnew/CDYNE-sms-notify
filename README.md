@@ -2,7 +2,7 @@
 
 ##What's this?##
  
-We [learned](link a kozossegepito cikkre) from the guys at (a site neve) there are a few key things in early community development. One of those is the swift - and jo minosegu if possible - answer to their forum posts. We can't exepct from the key members to be online all the time, and they can't or won't use web nor email on their phones... So we came up with the idea of a SMS autoresponder. Soon we found CDYNE's SMS Notify! API. 
+We [learned](http://www.feverbee.com/2012/04/when-data-disproves-community-building-myths.html) from the guys at FeverBee there are a few key things in early community development. One of those is the swift - and quality - answer to their forum posts. We can't exepct from our key members to be online all the time, and they can't (or won't) use neither web nor email on their phones... So we came up with the idea of a SMS autoresponder. Soon we found CDYNE's SMS Notify! API. 
 
 ##Install and usage:##
 
