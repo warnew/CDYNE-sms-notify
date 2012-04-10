@@ -10,6 +10,7 @@ function send_texts($numbers,$text) {
   $client = new SoapClient('http://sms2.cdyne.com/sms.svc?wsdl');
  
   // Cycle trough the numbers
+  if (!is_array($numbers)) $numbers = array($numbers);
   foreach ($numbers as $num) {
     // Specify the text
     $param = array(
@@ -20,8 +21,8 @@ function send_texts($numbers,$text) {
     // Send the text
     $result[] = $client->SimpleSMSsend($param);
   }
-  // View the response from CDYNE while debugging
-  if ($_GET['debug'] == 1) print_r($result);
+  // uncomment for debugging (and seeing CDYNE's response)
+  //print_r($result);
 }
 
 function generate_text($sms) {
