@@ -1,7 +1,6 @@
 <?
 define('SMS_AUTORESPONDER',true);
-
-include('./sms-notify-config.php');
+include('./sms_notify_config.php');
 
 //This is how we use the CDYNE SMS Notify! API:
 function send_texts($numbers,$text) {
@@ -11,32 +10,35 @@ function send_texts($numbers,$text) {
   $client = new SoapClient('http://sms2.cdyne.com/sms.svc?wsdl');
  
   // Cycle trough the numbers
+  if (!is_array($numbers)) $numbers = array($numbers);
   foreach ($numbers as $num) {
     // Specify the text
     $param = array(
       'PhoneNumber' => $num,
-      'LicenseKey' => $cdyne_lkey; 
+      'LicenseKey' => $cdyne_lkey,
       'Message' => $text
     );
     // Send the text
     $result[] = $client->SimpleSMSsend($param);
   }
-  // View the response from CDYNE while debugging
-  if ($_GET['debug'] == 1) print_r($result);
+  // uncomment for debugging (and seeing CDYNE's response)
+  //print_r($result);
 }
 
-function generate_text($event,$params) {
+function generate_text($sms) {
+  global $sms_notifier_events;
   // we don't use params yet, see plans...
-  return $sms_notifier_events[$event];
+  return $sms_notifier_events[$sms->event];
 }
 
 function process_request() {
   // we only access CDYNE's API so there is no need to sanitize the input \o/
 
-  if (!empty($_GET['sms'])) foreach ($_GET['sms'] as $sms) { // most of the time this will send only one text, but why not?
-    $text = generate_text($sms['event'],$sms['params']);
+  if (!empty($_POST['sms'])) foreach ($_POST['sms'] as $sms) { // most of the time this will send only one text, but why not?
+    $sms = json_decode($sms);
+    $text = generate_text($sms);
     if (empty($text)) continue;
-    send_text($sms['number'],$text);
+    send_texts($sms->number,$text);
   }
 }
 
