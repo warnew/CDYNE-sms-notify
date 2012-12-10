@@ -10,7 +10,7 @@ $sms_notify_url = $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/sms_noti
 // 'event_name' => 'response_text'
 
 $sms_notifier_events = array('new_mention'       => 'Hey, somebody just mentioned you at our forums!',
-                             'long_time_no_see'] => 'Long time no see! You should check in to our forums!';
+                             'long_time_no_see'  => 'Long time no see! You should check in to our forums!');
 
 
 ?>
